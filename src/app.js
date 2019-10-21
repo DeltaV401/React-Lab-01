@@ -1,21 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-const Header = () => {
-  return (
-    <header>
-      <h1>Header</h1>
-    </header>
-  );
-};
-
-class Footer extends React.Component {
-  render() {
-    return <footer>&copy; 2018 Code Fellows</footer>;
-  }
-}
-
-class Main extends React.Component {
+class Counter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -43,7 +31,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <Main />
+        <Counter />
         <Footer />
       </React.Fragment>
     );
