@@ -30,13 +30,25 @@ class Counter extends React.Component {
   };
 
   render() {
-    let counterClass = this.state.count ? 'not-0' : 'zero';
+    let counterClass;
+    if(this.state.count < 0) {
+      counterClass = 'negative';
+    } else if(this.state.count > 0) {
+      counterClass = 'positive';
+    } else {
+      counterClass = 'zero';
+    }
     return (
-      <div>
+      <main>
+        <h4 className="candyHeader">Trick or Treat?</h4>
         <h4 className={counterClass}>{this.state.count}</h4>
-        <button onClick={this.handleButtonClick}>Increase</button>
-        <button onClick={this.handleDecrement}>Decrease</button>
-      </div>
+        <form id="buttons">
+          <fieldset id="numberButtons">
+            <button id="increment" onClick={this.handleButtonClick}>Treat</button>
+            <button id="decrement" onClick={this.handleDecrement}>Trick</button>
+          </fieldset>
+        </form>
+      </main>
     );
   }
 }
