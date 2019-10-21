@@ -1,38 +1,41 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import './App.scss';
 
-const Header = () => {
-  return (
-    <header>
-      <h1>Header</h1>
-    </header>
-  );
-};
-
-class Footer extends React.Component {
-  render() {
-    return <footer>&copy; 2018 Code Fellows</footer>;
-  }
-}
-
-class Main extends React.Component {
+class Counter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      stuff: 0,
+      count: 0,
     };
   }
 
   handleButtonClick = e => {
     e.preventDefault();
-    this.setState({ stuff: Math.floor(Math.random() * 20 + 1) });
+    this.setState(state => {
+      return {
+        count: state.count + 1,
+      };
+    });
+  };
+
+  handleDecrement = e => {
+    e.preventDefault();
+    this.setState(state => {
+      return {
+        count: state.count - 1,
+      };
+    });
   };
 
   render() {
+    let counterClass = this.state.count ? 'not-0' : 'zero';
     return (
       <div>
-        <h4>{this.state.stuff}</h4>
-        <button onClick={this.handleButtonClick}>Click Me</button>
+        <h4 className={counterClass}>{this.state.count}</h4>
+        <button onClick={this.handleButtonClick}>Increase</button>
+        <button onClick={this.handleDecrement}>Decrease</button>
       </div>
     );
   }
@@ -43,7 +46,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <Main />
+        <Counter />
         <Footer />
       </React.Fragment>
     );

@@ -1,0 +1,31 @@
+$backgroundColor: skyblue;
+$textColor: white;
+$fontStack: 'Helvetica', sans-serif;
+
+body {
+  font-size: 20px;
+  font-family: $fontStack;
+  background-color: $backgroundColor;
+  color: $textColor;
+}
+
+header {
+  h1 {
+    color: $textColor;
+  }
+  background-color: $backgroundColor;
+}
+
+.not-0 {
+  font-size: 2rem;
+  margin-top: -.2rem;
+  margin-bottom: .45rem;
+}
+.zero {
+  font-size: 1rem;
+}
+
+button {
+  background-color: grey;
+  color: $textColor;
+}
