@@ -1,30 +1,39 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import './App.scss';
 
 class Counter extends React.Component {
   constructor(props) {
     super(props);
-    this.counter = {
+    this.state = {
       count: 0,
     };
   }
 
   handleButtonClick = e => {
     e.preventDefault();
-    this.setState({ counter: count + 1 });
+    this.setState(state => {
+      return {
+        count: state.count + 1,
+      };
+    });
   };
 
   handleDecrement = e => {
     e.preventDefault();
-    this.setState({ counter: count - 1 });
+    this.setState(state => {
+      return {
+        count: state.count - 1,
+      };
+    });
   };
 
   render() {
+    let counterClass = this.state.count ? 'not-0' : 'zero';
     return (
       <div>
-        <h4>{this.state.counter}</h4>
+        <h4 className={counterClass}>{this.state.count}</h4>
         <button onClick={this.handleButtonClick}>Increase</button>
         <button onClick={this.handleDecrement}>Decrease</button>
       </div>
