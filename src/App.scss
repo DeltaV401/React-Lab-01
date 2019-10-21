@@ -1,31 +1,92 @@
-$backgroundColor: skyblue;
-$textColor: white;
+@import '../Reset.scss';
+
+$backgroundColor: #E9804D;
+$textColor: rgb(200,200,200);
 $fontStack: 'Helvetica', sans-serif;
+$titleFont: 'Creepster', cursive;
+
 
 body {
   font-size: 20px;
   font-family: $fontStack;
   background-color: $backgroundColor;
   color: $textColor;
+  text-align: center;
 }
 
 header {
   h1 {
-    color: $textColor;
+    font-size: 3rem;
+    color: #5E32BA;
+    font-family: $titleFont;
   }
-  background-color: $backgroundColor;
+  background-color: #18181A;
+  padding: 30px;
+  box-shadow: grey 2px 2px 5px;
 }
 
-.not-0 {
-  font-size: 2rem;
-  margin-top: -.2rem;
-  margin-bottom: .45rem;
+main {
+  #buttons {
+    #increment {
+      background-color: #BFDA7A;
+    }
+    #increment:hover {
+      background-color: #869954;
+    }
+    #decrement {
+      background-color: #96C457;
+    }
+    #decrement:hover {
+      background-color: #6b8c3e;
+    }
+    button {
+      color: rgb(75,75,75);
+    }
+  }
+  margin: 30px;
+  border-radius: 10px;
+  border: 2px solid rgba(0,0,0,.3);
+  background-color: #EB6123;
+  padding: 30px;
+  padding-bottom: 15px;
 }
+
+footer {
+  font-size: .7rem;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
+
+.positive {
+  color: green;
+  font-family: $titleFont;
+  font-size: 1.5rem;
+}
+
+.negative {
+  color: red;
+  font-family: $titleFont;
+  font-size: 1.5rem;
+}
+
 .zero {
-  font-size: 1rem;
+  font-family: $titleFont;
+  font-size: 1.5rem;
+}
+
+.candyHeader {
+  color: #18181A;
+  font-size: 2rem;
+  font-family: $titleFont;
 }
 
 button {
+  padding: 5px;
+  margin: 10px;
+  margin-bottom: 0px;
   background-color: grey;
-  color: $textColor;
+  border-radius: 5px;
+  border: 1px solid rgb(75,75,75);
+  font-family: $titleFont;
 }
